@@ -1,0 +1,228 @@
+\documentclass{article}
+\usepackage{graphicx,amsfonts,amsmath} 
+
+\title{Problems in Ordinary Differential Equations}
+\author{Aditya Padiyar}
+\date{May 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This document contains solutions to some problems in ODE, from the textbooks of Perko; Hirsch, Smale and Devaney; and Hydon
+
+\section{Perko}
+
+\subsection*{Chapter 1}
+
+\begin{description}
+    \item [Problem Set 5, Problem 3] 
+        From the Theorem, we must have $|b|>2$ and $a \in (-\frac{b^2}{2},-2)$
+    
+    \item [Problem Set 9, Problem 5] 
+        We have that \[E^s=\mathbb{R}^n \cap \bigoplus_{\text{Re}\lambda<0} G(\lambda)\]
+        
+        \begin{itemize}
+            \item [a] Follows from Theorem 2
+            \item [b] Follows from Theorem 3
+        \end{itemize}
+\end{description}
+
+\subsection*{Chapter 2}
+
+\subsubsection*{Problem Set 1}
+
+\begin{enumerate}
+    \item There are 3 parts
+    
+        \begin{enumerate}
+            \item 
+            
+            \[Df(\mathbf{x}) = \begin{bmatrix} 1 + x_2^2 & 2x_1x_2 \\ 2x_1 & -1 + 2x_2 \end{bmatrix}\]
+    
+            $Dg(\mathbf{x}) = \begin{bmatrix} 
+            1 + x_2^2 + x_3^2 & 2x_1x_2 & 2x_1x_3 \\ 
+            -1 + x_2x_3 & 1 - x_3 + x_1x_3 & -x_2 + x_1x_2 \\ 
+            -2x_1 & 1 & 1 
+            \end{bmatrix}$ 
+    
+            \item $f^{-1}0=(0,0),(0,1)$ and $g^{-1}0=(0,0,0),(0,-1,1)$
+    
+            \item $D^2f(\mathbf{x})=\begin{bmatrix}
+                0&2x_2 \\
+                2x_2&2x_1 \\
+                2&0 \\
+                0&2
+            \end{bmatrix}$
+        
+        \end{enumerate}
+
+    \item There are 2 parts
+        \begin{enumerate}
+            \item this function is $C^1$ on the punctured plane
+            \item set $E=\{(x,y):x>-1,y>-2,x \neq 1\} \setminus \{(0,0)\}$
+        \end{enumerate}
+
+    \item 
+        Define $x(t)=\begin{cases}
+        \frac{t^2}{4} \text{ for }t \geq0 \\
+        0 \text{ else }
+    \end{cases}$
+
+    Then, 4 different solutions are $x,(t \to -x(-t)),(t \to x(t) -x(-t))$ and $0$
+
+    \item Define $x(t)=\frac{2}{\sqrt{1-8t}}$ for $t<\frac{1}{8}$
+    \item The function $x(t)=\sqrt{t}$ is a solution for $t>0$.
+    
+    \end{enumerate}
+
+    \subsubsection*{Problem Set 2}
+
+    \begin{enumerate}
+        \item We have $u_1(t)=1+t$, $u_2(t)=1+t+t^2+\frac{t^3}{3}$, and $u_3(t)=1+t+t^2+t^3+\frac{2t^4}{3}+\frac{t^5}{3}+\frac{t^6}{9}+\frac{t^7}{63}$. It is easy to use induction to show that this pattern continues.
+        \item We easily get that $u_k(t)=(\sum_{i=0}^k\frac{(At)^k}{k!})x_0$
+    \end{enumerate}
+
+    \subsubsection*{Problem Set 4}
+
+    \begin{enumerate}
+        \item There are 5 parts
+    
+        \begin{enumerate}
+            \item Assume $x_0>0$. Define $x:(-\infty,\frac{1}{x_0}) \to \mathbb{R}$ by $x(t)=\frac{x_0}{1-x_0t}$. Since this function is unbounded near $\frac{1}{x_0}$, this is the maximal interval by Theorem 1.
+
+            \item 
+
+            \begin{itemize}
+                
+                \item We have the function $x:(-1,1) \to (-\frac{\pi}{2},\frac{\pi}{2})$ given by $x(t)=\text{arcsin}(t)$. This function satisfies the IVP.
+
+                \item Suppose there is a function $y:(-\alpha,\beta) \to E=\mathbb{R}\setminus\{(n+\frac{1}{2})\pi\}$ satisfying the IVP. Then by Theorem 1 $y(t)=x(t)$ for all $t \in (-1,1)$.
+
+                Suppose $\beta>1$. Then $y(1)=\text{lim}_{t \to 1^-}y(t)=\frac{\pi}{2}$, which is a contradiction.
+
+                Similarly $\alpha\geq -1$
+            
+            \end{itemize}
+            
+            \item Define $x(t)-2\text{tanh}(2t)$
+
+            \item Define $x(t)=\frac{x_0}{\sqrt{1-2x_0^2t}}$ for $t<\frac{1}{2x_0^2}$. Since this function is unbounded near $\frac{1}{2x_0^2}$, this is the maximal interval by Theorem 1.
+
+            \item Define $x:(-\infty,\frac{1}{y_1}) \to E = (\mathbb{R}\setminus\{0\}) \times \mathbb{R}$ by $x(t)=(\frac{y_1}{1-y_1t},(y_2-1+\frac{1}{y_1})e^t+t+1-\frac{1}{y_1})$. Since $x(t)$ is unbounded near $\frac{1}{y_1}$, by Theorem 1 this is the maximal interval.
+        
+        \end{enumerate}
+
+    \item Here are the parts
+    
+        \begin{enumerate}
+        
+        \item This is the same as the previous problem, with a particular initial value.
+
+        \item 
+        
+        \begin{itemize}
+            
+            \item Define $x:(-1,1) \to E=(\mathbb{R}\setminus\{0\}) \times \mathbb{R}$ by $x(t)=(\sqrt{1+t},\frac{1}{1-t})$
+
+            \item The interval cannot be extended beyond $1$ because $x(t)$ is unbounded near $1$
+
+            \item The interval cannot be extended beyond $-1$ because \\ $\text{lim}_{t \to -1^+}x(t)=(0,\frac{1}{2}) \notin E$ 
+        
+        \end{itemize}
+
+        \item Define $x:(-1,\infty) \to E=(\mathbb{R}\setminus\{0\}) \times \mathbb{R}$ by \\$x(t)=(\sqrt{1+t},\frac{2}{3}\sqrt{1+t}(1+t)+\frac{1}{3}$. This cannot be extended beyond $-1$ because $\text{lim}_{t \to -1^+}x(t)=(0,\frac{1}{3}) \notin E$
+        
+        \end{enumerate}
+
+    \item 
+
+    \item We have the map $f:E \to E$ given by $f(x_1,x_2,x_3)=(-\frac{x_2}{x_3^2},\frac{x_1}{x_3^2},1)$ where $E=  \mathbb{R} \times \mathbb{R} \times (\mathbb{R} \setminus \{0\})$.
+    
+      We have the covering map $\text{cyl}=\text{pol} \times \text{id}_{\mathbb{R} \setminus \{0\}}$ where $\text{pol}:\mathbb{R} \times (0,\infty) \to \mathbb{R}^2 \setminus \{0\}$ is the smooth surjective covering map given by $\text{pol}(\theta,r)=(r\text{cos}\theta,r\text{sin}\theta)$
+
+    Suppose we have a differentiable path $x:[0,1] \to E$ such that $x'=f \circ x$ and $x(0)=\text{cyl}(p_0)$.
+    
+       By Lemma 54.1 of Munkres, we get $y:[0,1] \to \mathbb{R} \times (0,\infty) \times (\mathbb{R}\setminus \{0\})$ with $y(0)=p_0$ and $x=\text{cyl} \circ y$
+    \end{enumerate}
+
+
+
+
+
+
+
+
+\section{Hydon, Chapter 1}
+
+\begin{enumerate}
+    \item The solutions are $y=mx$. To see that these are the only solutions, suppose $y:(a,b) \to \mathbb{R}$ is a solution, where $0 \notin (a,b)$. Define $f(t)=\frac{y(t)}{t}$. Then $f'(t)=0$.
+
+    Some symmetries of this ODE are:
+    \begin{itemize}
+        \item rotations by the matrices $R_\theta \in SO_2$
+
+        \item the reflection $\text{id} \times (-\text{id})$
+    \end{itemize}
+
+    \item We have $f:(\mathbb{R} \setminus \{0\}) \times \mathbb{R} \to \mathbb{R}$ given by $f(t,x)=\frac{1-x^2}{t}$
+
+    We have the linear map $T_\epsilon=e^\epsilon\text{id} \times \text{id}$
+
+    An arbitrary solution is a map $x:0 \notin (a,b) \to \mathbb{R}$ such that $x'(t)=f(t,x(t))$
+
+    The image of this curve under $T_\epsilon$ is the map $e^\epsilon(a,b) \to \mathbb{R}$ given by $t \to x(te^{-\epsilon})$
+
+    It is clear that these sets are the same.
+
+    \item We have the function $f:U \to \mathbb{R}^2$ given by $f(x,y)=1,\frac{y^3+x^2y-x-y}{xy^2+x^3+y-x}$ where $U \subseteq \mathbb{R}^2$ is the set where the denominator is nonzero.
+
+\end{enumerate}
+
+
+
+\section{Hirsch-Smale-Devaney, Chapter 8}
+
+\begin{enumerate}
+    \item 
+    
+    \begin{enumerate}
+        
+        \item The equilibrium point $x_{m,n}$ is given by $x_{m,n}=\pi(n,m+\frac{1}{2})$. 
+
+        We have that $DF_{x_{m,n}}=\begin{pmatrix}
+(-1)^n & 0\\
+0 & (-1)^{m+1} 
+\end{pmatrix}$
+
+        \item The only equilibrium point is the origin.
+
+        We have that $DF_0=0$
+
+        \item The only equilibrium point is the origin.
+
+        We have that $DF_0=\begin{pmatrix}
+            1 & 0 \\
+            0 & 2
+        \end{pmatrix}$
+
+        \item The equilibrium points are given by $x_s=(s,0)$
+
+        We have that $DF_{x_s}=\begin{pmatrix}
+            0 & 0\\
+            0 & 1
+        \end{pmatrix}$
+
+        \item The only equilibrium point is the origin.
+
+        We have that $DF_0=0$
+    
+    \end{enumerate}
+
+    \item Consider the diffeomorphism $(x,y,z) \to (x+\frac{1}{3}y^2,y,z+y^2)$
+
+    
+\end{enumerate}
+
+\end{document}
